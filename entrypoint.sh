@@ -4,6 +4,8 @@ case "$1" in
         shift
         bundle exec rails server "$@"
         ;;
+    ci*)
+        bundle exec rake ci
     *)
         bundle exec "$@"
         ;;
