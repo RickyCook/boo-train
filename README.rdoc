@@ -13,7 +13,7 @@ a base Debian _JESSIE_ install are:
 
 Though Ruby and bundler can be installed via RVM, or however you want.
 
-Ruby gems can be installed as usual: +bundle install --path=vendor/bundle+
+Ruby gems can be installed as usual: <tt>bundle install --path=vendor/bundle</tt>
 
 === Deployment
 The +Dockerfile+ is the source of truth for how to install, deploy, and run the
@@ -24,9 +24,9 @@ Docker is the supported method of deployment, and should be used unless you
 have some stupidly good reason not to (which is a general statement about
 everything you do; It's 2014, after all).
 
-To build, and install simply run +docker build .+
+To build, and install simply run <tt>docker build .</tt>
 
-To run on port 3000, +docker run -p 3000:3000 <your container>+. Persistent
+To run on port 3000, <tt>docker run -p 3000:3000 <your container></tt>. Persistent
 data will come in a bit, but feel free to mount the sqlite db as a volume.
 
 ==== Bad, unsupported, not-cool, not-Docker steps
@@ -43,4 +43,4 @@ entry for Docker. You may do:
     <entrypoint> rails <your rails command>
     <entrypoint> <any console command, or command from the bundle bins>
 
-Where +<entrypoint>+ is one of +docker run ...+, or +./entrypoint.sh+
+Where <tt><entrypoint></tt> is one of <tt>docker run ...</tt>, or +./entrypoint.sh+
