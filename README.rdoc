@@ -39,6 +39,7 @@ Did we mention that this is unsupported, and that you shouldn't do this?
 The +entrypoint.sh+ file wraps +rake+, and +rails+ in order to provide a single
 entry for Docker. You may do:
 
+    <entrypoint> serve
     <entrypoint> rake <your rake task>
     <entrypoint> rails <your rails command>
     <entrypoint> <any console command, or command from the bundle bins>
