@@ -15,7 +15,7 @@ RUN echo 'gem: --no-rdoc --no-ri' > /etc/gemrc
 
 ADD Gemfile /code/Gemfile
 ADD Gemfile.lock /code/Gemfile.lock
-RUN bundle install --path=/code/vendor/bundle
+RUN bundle install --deployment
 
 ADD . /code
 
