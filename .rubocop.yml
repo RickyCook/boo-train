@@ -1,0 +1,4 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - features/support/env.rb
