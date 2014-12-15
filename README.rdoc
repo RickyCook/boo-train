@@ -1,3 +1,5 @@
+{<img src="https://travis-ci.org/RickyCook/boo-train.svg" alt="Build Status" />}[https://travis-ci.org/RickyCook/boo-train]
+
 == BOO! TRAIN!
 ... What?
 
