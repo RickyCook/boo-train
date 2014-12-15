@@ -7,17 +7,16 @@ name was even auto generated, so don't even.
 === Dependencies
 Made for Debian, not a whole lot else. The extra required Debian packages from
 a base Debian _JESSIE_ install are:
-
- - ruby
- - bundler
- - libsqlite3-dev
+- ruby
+- bundler
+- libsqlite3-dev
 
 Though Ruby and bundler can be installed via RVM, or however you want.
 
-Ruby gems can be installed as usual: `bundle install --path=vendor/bundle`
+Ruby gems can be installed as usual: +bundle install --path=vendor/bundle+
 
 === Deployment
-The `Dockerfile` is the source of truth for how to install, deploy, and run the
+The +Dockerfile+ is the source of truth for how to install, deploy, and run the
 app.
 
 ==== Docker
@@ -25,27 +24,23 @@ Docker is the supported method of deployment, and should be used unless you
 have some stupidly good reason not to (which is a general statement about
 everything you do; It's 2014, after all).
 
-To build, and install simply run `docker build .`
+To build, and install simply run +docker build .+
 
-To run on port 3000, `docker run -p 3000:3000 <your container>`. Persistent
+To run on port 3000, +docker run -p 3000:3000 <your container>+. Persistent
 data will come in a bit, but feel free to mount the sqlite db as a volume.
 
 ==== Bad, unsupported, not-cool, not-Docker steps
 Did we mention that this is unsupported, and that you shouldn't do this?
 
-```bash
-bundle install --path=vendor/bundle
-bundle exec rails server
-```
+    bundle install --path=vendor/bundle
+    bundle exec rails server
 
 === Utils
-The `entrypoint.sh` file wraps `rake`, and `rails` in order to provide a single
+The +entrypoint.sh+ file wraps +rake+, and +rails+ in order to provide a single
 entry for Docker. You may do:
 
-```bash
-<entrypoint> rake <your rake task>
-<entrypoint> rails <your rails command>
-<entrypoint> <any console command, or command from the bundle bins>
-```
+    <entrypoint> rake <your rake task>
+    <entrypoint> rails <your rails command>
+    <entrypoint> <any console command, or command from the bundle bins>
 
-Where `<entrypoint>` is one of `docker run ...`, or `./entrypoint.sh`
+Where +<entrypoint>+ is one of +docker run ...+, or +./entrypoint.sh+
