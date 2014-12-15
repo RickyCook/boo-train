@@ -1,0 +1,6 @@
+language: ruby
+ruby:
+  - "2.0.0"
+
+install: bundle install --path vendor/bundle
+script: ./entrypoint.sh ci
